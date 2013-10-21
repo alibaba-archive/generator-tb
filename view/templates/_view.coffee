@@ -1,7 +1,7 @@
 define([
   'view'
   'warehouse'
-  './template/basic'
+  './templates/basic'
 ], (
   View
   Warehouse
@@ -16,7 +16,7 @@ define([
     }
 
     initialize: (options) ->
-      @options = options
+      @options = options or {}
       @renderBasic()
       return this
 
