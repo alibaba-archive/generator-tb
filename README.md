@@ -40,6 +40,10 @@ $ yo tb:model 'today event'
     create src/scripts/collections/today-events.coffee
 ```
 
+### How to dev
+
+- [GENERATE A GENERATOR](http://yeoman.io/generators.html) from [Yeoman](http://yeoman.io)
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
