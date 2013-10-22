@@ -1,12 +1,12 @@
 {
   "name": "generator-tb",
   "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "description": "A generator for Teambtion web app",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/island205/generator-tb",
-  "bugs": "https://github.com/island205/generator-tb/issues",
+  "homepage": "https://github.com/teambition/generator-tb",
+  "bugs": "https://github.com/teambition/generator-tb/issues",
   "author": {
     "name": "ZhiCun",
     "email": "island205@gmail.com",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/island205/generator-tb.git"
+    "url": "git://github.com/teambition/generator-tb.git"
   },
   "scripts": {
     "test": "mocha"
