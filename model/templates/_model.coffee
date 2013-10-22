@@ -4,7 +4,7 @@ define([
   Model
 ) ->
   class <%= modelName %>Model extends Model
-    name: '<%= fileName %>'
+    name: '<%= modelNameName %>'
     defaults: {
     }
 )

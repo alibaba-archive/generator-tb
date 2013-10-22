@@ -11,46 +11,51 @@ var ViewGenerator = module.exports = function ViewGenerator(args, options, confi
 util.inherits(ViewGenerator, yeoman.generators.NamedBase);
 
 ViewGenerator.prototype.files = function files() {
-  /**
-  this.name                 viewName        fileName                path
-  post                      Post            post.coffee             post/
-  post creator              PostCreator     post-creator.coffee     post-creator/
-  settings/project settings ProjectSettings project-settings.coffee setttings/
-  */
-  var dir = '.', templateDir,i18nDir,
+
+  var dir, viewsDir, stylesheetsDir, templatesDir, localesDir,
       viewName,
       fileName,
       temp;
 
-  var VIEW_PATH = 'src/scripts/views/';
+  var VIEWS_PATH = 'src/scripts/views/',
+      STYLESHEETS_PATH = 'src/stylesheets/',
+      TEMPLATES_PATH = 'src/templates/',
+      LOCALES_PATH = 'src/locales/';
 
+  // "board/stage/stage menu"
   temp = this.name.split('/');
-  // settings/project settings
   if (temp.length > 1) {
+    // "stage menu"
     this.name = temp.pop();
+    // "board/stage"
     dir = temp.join('/');
   }
-  dir = VIEW_PATH + dir;
 
   temp = this.name.split(' ');
+  // "stage-menu"
   this.fileName = fileName = this._.slugify(this.name);
-  dir = dir + '/' + fileName;
-  templateDir = dir + '/templates';
-  i18nDir = dir + '/locales';
-
+  // StageMenu
   this.viewName = viewName = temp.map(function (part) {
     return part.substring(0, 1).toUpperCase() + part.substring(1)
   }).join('');
 
-  this.mkdir(dir);
-  this.mkdir(templateDir);
+  viewsDir = VIEWS_PATH + dir;
+  stylesheetsDir = STYLESHEETS_PATH + dir + '/' + fileName;
+  templatesDir = TEMPLATES_PATH + dir + '/' + fileName;
+  localesDir = LOCALES_PATH + dir + '/' + fileName;
 
-  this.template('_view.coffee', dir + '/' + fileName + '.coffee');
+  // "src/scripts/views/board/stage"
+  this.mkdir(viewsDir);
+  // "src/stylesheets/board/stage/stage-menu"
+  this.mkdir(stylesheetsDir);
+  // "src/templates/board/stage/stage-menu"
+  this.mkdir(templatesDir);
+  // "src/locales/board/stage/stage-menu"
+  this.mkdir(localesDir);
 
-  this.copy('_style.less', dir + '/' + fileName + '.less')
-
-  this.copy('templates/_basic.html', templateDir + '/' + 'basic.html')
-
-  this.copy('locales/zh.json', i18nDir + '/' + 'zh.json')
-  this.copy('locales/zh.json', i18nDir + '/' + 'en.json')
+  this.template('_view.coffee', viewsDir + '/' + fileName + '.coffee');
+  this.copy('_style.less', stylesheetsDir + '/' + fileName + '.less')
+  this.copy('templates/_basic.html', templatesDir + '/' + 'basic.html')
+  this.copy('locales/zh.json', localesDir + '/' + 'zh.json')
+  this.copy('locales/zh.json', localesDir + '/' + 'en.json')
 };

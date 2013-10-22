@@ -1,11 +1,11 @@
 define([
   'collection'
-  'models/<%= fileName %>'
+  'models/<%= modelFileName %>'
 ], (
   Collection
   <%= modelName%>Model
 ) ->
   class <%= modelName %>Collection extends Collection
-    name: '<%= modelPlural %>'
+    name: '<%= collectionNameName %>'
     model: <%= modelName%>Model
 )
