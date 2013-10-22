@@ -1,4 +1,4 @@
-# generator-tb [![Build Status](https://secure.travis-ci.org/island205/generator-tb.png?branch=master)](https://travis-ci.org/island205/generator-tb)
+# generator-tb 
 
 A [Yeoman](http://yeoman.io) generator for [Teambition](https://teambition.com)'s web app.
 
