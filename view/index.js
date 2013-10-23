@@ -40,7 +40,7 @@ ViewGenerator.prototype.files = function files() {
   }).join('');
 
   viewsDir = VIEWS_PATH + dir;
-  stylesheetsDir = STYLESHEETS_PATH + dir + '/' + fileName;
+  stylesheetsDir = STYLESHEETS_PATH + dir;
   templatesDir = TEMPLATES_PATH + dir + '/' + fileName;
   localesDir = LOCALES_PATH + dir + '/' + fileName;
 

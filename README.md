@@ -21,13 +21,18 @@ $ npm install -g generator-tb
 
 ### Usage
 
-Finally, initiate the generator:
+Available generators:
+
+- yo tb:view
+- yo tb:model
+
+#### Example
 
 ```
 $ yo tb:view 'today/task list'
 
     create src/scripts/views/today/task-list.coffee
-    create src/stylesheets/today/task-list/task-list.less
+    create src/stylesheets/today/task-list.less
     create src/templates/today/task-list/basic.html
     create src/locales/today/task-list/zh.json
     create src/locales/today/task-list/en.json
