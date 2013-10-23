@@ -1,7 +1,7 @@
 define([
   'view'
   'warehouse'
-  './templates/basic'
+  'templates/<%= templatesDir %>/basic'
 ], (
   View
   Warehouse

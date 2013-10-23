@@ -43,6 +43,7 @@ ViewGenerator.prototype.files = function files() {
   stylesheetsDir = STYLESHEETS_PATH + dir;
   templatesDir = TEMPLATES_PATH + dir + '/' + fileName;
   localesDir = LOCALES_PATH + dir + '/' + fileName;
+  this.templatesDir = dir + '/' + fileName;
 
   // "src/scripts/views/board/stage"
   this.mkdir(viewsDir);
