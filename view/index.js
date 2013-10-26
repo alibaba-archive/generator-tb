@@ -1,4 +1,6 @@
 'use strict';
+require('coffee-script');
+var Updater = require('../lib/updater');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 
@@ -38,6 +40,7 @@ ViewGenerator.prototype.files = function files() {
   this.viewName = viewName = temp.map(function (part) {
     return part.substring(0, 1).toUpperCase() + part.substring(1)
   }).join('');
+  this.viewNameName = this.viewName.substring(0, 1).toLowerCase() + this.viewName.substring(1)
 
   viewsDir = VIEWS_PATH + dir;
   stylesheetsDir = STYLESHEETS_PATH + dir;
@@ -59,4 +62,8 @@ ViewGenerator.prototype.files = function files() {
   this.copy('templates/_basic.html', templatesDir + '/' + 'basic.html')
   this.copy('locales/zh.json', localesDir + '/' + 'zh.json')
   this.copy('locales/zh.json', localesDir + '/' + 'en.json')
+
+  Updater.updateConstructors(dir + '/' + fileName);
+  Updater.updateMainLess(dir + '/' + fileName);
+  Updater.updateLocales(dir + '/' + fileName);
 };

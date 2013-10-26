@@ -8,7 +8,7 @@ define([
   BasicTemplate
 ) ->
   class <%= viewName %> extends View
-    viewName: '<%= viewName %>'
+    viewName: '<%= viewNameName %>'
     tagName: 'div'
     className: '<%= fileName %>-view'
 

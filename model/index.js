@@ -1,4 +1,6 @@
 'use strict';
+require('coffee-script');
+var Updater = require('../lib/updater');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var pluralize = require('../lib/pluralize');
@@ -34,4 +36,8 @@ ModelGenerator.prototype.files = function files() {
 
   this.template('_model.coffee', MODEL_PATH + this.modelFileName + '.coffee');
   this.template('_collections.coffee', COLLECTION_PATH + this.collectionFileName + '.coffee');
+
+  // updater reference
+  Updater.updateConstructors('models/' + this.modelFileName);
+  Updater.updateConstructors('collections/' + this.collectionFileName);
 };
