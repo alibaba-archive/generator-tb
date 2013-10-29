@@ -38,6 +38,6 @@ ModelGenerator.prototype.files = function files() {
   this.template('_collections.coffee', COLLECTION_PATH + this.collectionFileName + '.coffee');
 
   // updater reference
-  Updater.updateConstructors('models/' + this.modelFileName);
-  Updater.updateConstructors('collections/' + this.collectionFileName);
+  // Updater.updateConstructors('models/' + this.modelFileName);
+  // Updater.updateConstructors('collections/' + this.collectionFileName);
 };

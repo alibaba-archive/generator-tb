@@ -63,7 +63,7 @@ ViewGenerator.prototype.files = function files() {
   this.copy('locales/zh.json', localesDir + '/' + 'zh.json')
   this.copy('locales/zh.json', localesDir + '/' + 'en.json')
 
-  Updater.updateConstructors(dir + '/' + fileName);
+  // Updater.updateConstructors(dir + '/' + fileName);
   Updater.updateMainLess(dir + '/' + fileName);
   Updater.updateLocales(dir + '/' + fileName);
 };
