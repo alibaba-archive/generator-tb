@@ -1,32 +1,69 @@
-# generator-tb 
+# generator-tb
 
 A [Yeoman](http://yeoman.io) generator for [Teambition](https://teambition.com)'s web app.
 
 
 ## Getting Started
 
-### Install Yeoman
+### Install Yeoman and Teambition Generator
 
 ```
-$ npm install -g yo
+$ npm install -g yo generator-tb
 ```
 
-### Install generator-tb
-
-To install generator-tb from npm, run:
-
-```
-$ npm install -g generator-tb
-```
-
-### Usage
+### Using the Generator
 
 Available generators:
 
+- yo tb
 - yo tb:view
 - yo tb:model
 
 #### Example
+
+```
+$ mkdir app && cd app
+$ yo tb
+
+    create app.coffee
+    create routes/index.coffee
+    create views/web/layout.jade
+    create views/web/development.jade
+    create views/web/ga.jade
+    create views/web/build.jade
+    create views/web/production.jade
+    create views/mobile-web/layout.jade
+    create views/mobile-web/development.jade
+    create views/mobile-web/ga.jade
+    create views/mobile-web/build.jade
+    create views/mobile-web/production.jade
+    create src/apps/web/main.coffee
+    create src/apps/web/router.coffee
+    create src/apps/web/main.less
+    create src/apps/mobile-web/main.coffee
+    create src/apps/mobile-web/router.coffee
+    create src/apps/mobile-web/main.less
+    create src/lib/model.coffee
+    create src/lib/collection.coffee
+    create src/lib/view.coffee
+    create src/lib/hotkey.coffee
+    create src/lib/warehouse.coffee
+    create src/locales/zh.json
+    create src/locales/en.json
+    create src/components/models/user/index.coffee
+    create src/components/models/locales/en.json
+    create src/components/models/locales/zh.json
+    create src/components/views/hello/locales/en.json
+    create src/components/views/hello/locales/zh.json
+    create src/components/views/hello/templates/basic.html
+    create src/components/views/hello/index.coffee
+    create src/components/views/hello/style.less
+    create package.json
+    create bower.json
+    create .editorconfig
+    create .bowerrc
+    create .jshintrc
+```
 
 ```
 $ yo tb:view 'today/task list'

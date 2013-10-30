@@ -1,5 +1,23 @@
 {
-  "name": "package",
+  "name": "<%= appName %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "jade": "~0.28.1",
+    "express": "~3.1.0",
+    "underscore": "~1.4.4",
+    "colors": "~0.6.0-1",
+    "less-middleware": "latest",
+    "connect-coffee-script": "latest",
+    "dot-middleware": "latest",
+    "i18n-middleware": "latest"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "devDependencies": {
+    "dot": "~1.0.1",
+    "recess": "~1.1.6",
+    "coffee-script": "~1.6.2",
+    "closurecompiler": "~1.1.2"
+  }
 }

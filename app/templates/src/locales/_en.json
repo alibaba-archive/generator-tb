@@ -1,0 +1,6 @@
+{
+  "@include": [
+    "src/components/models/user/locale",
+    "src/components/views/hello/locale"
+  ]
+}

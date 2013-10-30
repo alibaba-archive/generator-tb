@@ -1,6 +1,13 @@
 {
-  "name": "package",
+  "name": "today",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "requirejs": "~2.1.4",
+    "backbone": "~1.0.0",
+    "underscore": "~1.4.4",
+    "jquery": "~2.0.3",
+    "UI": "git@github.com:teambition/UI.git",
+    "thenjs": ">=0.9.0",
+    "mousetrap": "~1.4.5"
+  }
 }
-
