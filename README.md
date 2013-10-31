@@ -25,61 +25,61 @@ Available generators:
 $ mkdir app && cd app
 $ yo tb
 
-    create app.coffee
-    create routes/index.coffee
-    create views/web/layout.jade
-    create views/web/development.jade
-    create views/web/ga.jade
-    create views/web/build.jade
-    create views/web/production.jade
-    create views/mobile-web/layout.jade
-    create views/mobile-web/development.jade
-    create views/mobile-web/ga.jade
-    create views/mobile-web/build.jade
-    create views/mobile-web/production.jade
-    create src/apps/web/main.coffee
-    create src/apps/web/router.coffee
-    create src/apps/web/main.less
-    create src/apps/mobile-web/main.coffee
-    create src/apps/mobile-web/router.coffee
-    create src/apps/mobile-web/main.less
-    create src/lib/model.coffee
-    create src/lib/collection.coffee
-    create src/lib/view.coffee
-    create src/lib/hotkey.coffee
-    create src/lib/warehouse.coffee
-    create src/locales/zh.json
-    create src/locales/en.json
-    create src/components/models/user/index.coffee
-    create src/components/models/locales/en.json
-    create src/components/models/locales/zh.json
-    create src/components/views/hello/locales/en.json
-    create src/components/views/hello/locales/zh.json
-    create src/components/views/hello/templates/basic.html
-    create src/components/views/hello/index.coffee
-    create src/components/views/hello/style.less
-    create package.json
-    create bower.json
-    create .editorconfig
-    create .bowerrc
-    create .jshintrc
+  create app.coffee
+  create routes/index.coffee
+  create views/web/layout.jade
+  create views/web/development.jade
+  create views/web/ga.jade
+  create views/web/build.jade
+  create views/web/production.jade
+  create views/mobile-web/layout.jade
+  create views/mobile-web/development.jade
+  create views/mobile-web/ga.jade
+  create views/mobile-web/build.jade
+  create views/mobile-web/production.jade
+  create src/apps/web/main.coffee
+  create src/apps/web/router.coffee
+  create src/apps/web/main.less
+  create src/apps/mobile-web/main.coffee
+  create src/apps/mobile-web/router.coffee
+  create src/apps/mobile-web/main.less
+  create src/lib/model.coffee
+  create src/lib/collection.coffee
+  create src/lib/view.coffee
+  create src/lib/hotkey.coffee
+  create src/lib/warehouse.coffee
+  create src/locales/zh.json
+  create src/locales/en.json
+  create src/components/models/user/index.coffee
+  create src/components/models/locales/en.json
+  create src/components/models/locales/zh.json
+  create src/components/views/hello/locales/en.json
+  create src/components/views/hello/locales/zh.json
+  create src/components/views/hello/templates/basic.html
+  create src/components/views/hello/index.coffee
+  create src/components/views/hello/style.less
+  create package.json
+  create bower.json
+  create .editorconfig
+  create .bowerrc
+  create .jshintrc
 ```
 
 ```
-$ yo tb:view 'today/task list'
+$ yo tb:view 'board/stage menu'
 
-    create src/scripts/views/today/task-list.coffee
-    create src/stylesheets/today/task-list.less
-    create src/templates/today/task-list/basic.html
-    create src/locales/today/task-list/zh.json
-    create src/locales/today/task-list/en.json
+  create src/components/views/board/stage-menu/index.coffee
+  create src/components/views/board/stage-menu/style.less
+  create src/components/views/board/stage-menu/locales/en.json
+  create src/components/views/board/stage-menu/locales/zh.json
+  create src/components/views/board/stage-menu/templates/basic.html
 ```
 
 ```
 $ yo tb:model 'today event'
 
-    create src/scripts/models/today-event.coffee
-    create src/scripts/collections/today-events.coffee
+  create src/scripts/models/today-event.coffee
+  create src/scripts/collections/today-events.coffee
 ```
 
 ### How to dev
