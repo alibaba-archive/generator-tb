@@ -90,8 +90,8 @@ TbGenerator.prototype.app = function app() {
   this.copy('src/locales/_en.json', 'src/locales/en.json');
 
   this.copy('src/components/models/user/_index.coffee', 'src/components/models/user/index.coffee');
-  this.copy('src/components/models/user/locales/_en.json', 'src/components/models/locales/en.json');
-  this.copy('src/components/models/user/locales/_zh.json', 'src/components/models/locales/zh.json');
+  this.copy('src/components/models/user/locales/_en.json', 'src/components/models/user/locales/en.json');
+  this.copy('src/components/models/user/locales/_zh.json', 'src/components/models/user/locales/zh.json');
 
   this.copy('src/components/views/hello/locales/_en.json', 'src/components/views/hello/locales/en.json');
   this.copy('src/components/views/hello/locales/_zh.json', 'src/components/views/hello/locales/zh.json');
