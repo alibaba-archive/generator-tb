@@ -23,7 +23,8 @@
   "dependencies": {
     "yeoman-generator": "~0.13.0",
     "coffee-script": "~1.6.3",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "lingo": "0.0.5"
   },
   "devDependencies": {
     "mocha": "~1.12.0"

@@ -4,6 +4,7 @@ var Updater = require('../lib/updater');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var pluralize = require('../lib/pluralize');
+var lingo = require('lingo');
 
 var ModelGenerator = module.exports = function ModelGenerator(args, options, config) {
   // By calling `NamedBase` here, we get the argument to the subgenerator call
@@ -14,30 +15,43 @@ var ModelGenerator = module.exports = function ModelGenerator(args, options, con
 util.inherits(ModelGenerator, yeoman.generators.NamedBase);
 
 ModelGenerator.prototype.files = function files() {
-  var temp;
+  var MODEL_PATH = 'src/components/models/',
+      COLLECTION_PATH = 'src/components/collections/';
 
-  var MODEL_PATH = 'src/scripts/models/',
-      COLLECTION_PATH = 'src/scripts/collections/';
-  // hidden task group
-  // [hidden, task, group]
-  temp = this.name.split(' ');
-  this.modelFileName = this._.slugify(this.name);
-  this.modelName = temp.map(function (part) {
-    return part.substring(0, 1).toUpperCase() + part.substring(1)
-  }).join('');
-  this.modelNameName = this.modelName.substring(0, 1).toLowerCase() + this.modelName.substring(1)
+  // Hidden Task Group
+  this.Title = this._.titleize(this.name);
+  // hidden-task-group
+  this.slugModelName = this._.slugify(this.name);
+  // hidden-task-groups
+  this.slugCollectionName = this._.slugify(lingo.en.pluralize(this.name));
+  // hiddenTaskGroup
+  this.modelName = this._.camelize(this.name);
+  // HiddenTaskGroupModel
+  this.ModelName = this._.classify(this.name) + 'Model';
+  // hiddenTaskGroups
+  this.collectionName = this._.camelize(lingo.en.pluralize(this.name));
+  // HiddenTaskGroupsCollection
+  this.CollectionName = this._.classify(lingo.en.pluralize(this.name)) + 'Collection';
 
-  temp[temp.length - 1] = pluralize(temp[temp.length - 1]);
-  this.collectionFileName = temp.join('-');
-  this.collectionName = temp.map(function (part) {
-    return part.substring(0, 1).toUpperCase() + part.substring(1)
-  }).join('');
-  this.collectionNameName = this.collectionName.substring(0, 1).toLowerCase() + this.collectionName.substring(1)
+  // src/components/models/hidden-task-group
+  this.modelDir = MODEL_PATH + this.slugModelName;
+  // src/components/models/hidden-task-group/locales;
+  this.modelLocalesDir = this.modelDir + '/locales';
+  // src/components/collections/hidden-task-groups
+  this.collectionDir = COLLECTION_PATH + this.slugCollectionName;
+  // src/components/collections/hidden-task-groups/locales
+  this.collectionLocalesDir = this.collectionDir + '/locales';
 
-  this.template('_model.coffee', MODEL_PATH + this.modelFileName + '.coffee');
-  this.template('_collections.coffee', COLLECTION_PATH + this.collectionFileName + '.coffee');
+  this.mkdir(this.modelDir);
+  this.mkdir(this.modelLocalesDir);
+  this.mkdir(this.collectionDir);
+  this.mkdir(this.collectionLocalesDir);
 
-  // updater reference
-  // Updater.updateConstructors('models/' + this.modelFileName);
-  // Updater.updateConstructors('collections/' + this.collectionFileName);
+  this.template('model/_index.coffee', this.modelDir + '/index.coffee');
+  this.template('model/locales/_en.json', this.modelLocalesDir + '/en.json');
+  this.template('model/locales/_zh.json', this.modelLocalesDir + '/zh.json');
+  this.template('collection/_index.coffee', this.collectionDir + '/index.coffee');
+  this.template('collection/locales/_en.json', this.collectionLocalesDir + '/en.json');
+  this.template('collection/locales/_zh.json', this.collectionLocalesDir + '/zh.json');
+
 };
