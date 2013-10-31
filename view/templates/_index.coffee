@@ -1,22 +1,22 @@
 define([
   'view'
   'warehouse'
-  'templates/<%= templatesDir %>/basic'
+  './templates/basic'
 ], (
   View
   Warehouse
   BasicTemplate
 ) ->
-  class <%= viewName %> extends View
-    viewName: '<%= viewNameName %>'
-    tagName: 'div'
-    className: '<%= fileName %>-view'
+  class <%= ViewName %> extends View
+    viewName: '<%= viewName %>'
+    className: '<%= slugName %>'
 
     events: {
+
     }
 
     initialize: (options) ->
-      @options = options or {}
+      @options = _.extend({}, options)
       @renderBasic()
       return this
 

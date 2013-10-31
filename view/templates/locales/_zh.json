@@ -1,0 +1,3 @@
+{
+  "<%=  ViewName %>Title": "<%= Title %>的标题"
+}

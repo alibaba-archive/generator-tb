@@ -40,7 +40,7 @@ updateMainLess = (reference) ->
   __updater(realReference, mainLessPath, LESS_IMPORT_REG, replaceReference)
 
 updateLocales = (reference) ->
-  realReference = "    \"src/locales/#{reference}\""
+  realReference = "    \"#{reference}\""
   replaceReference = ",\n#{realReference}"
   __updater(realReference, zhLocalesPath, LOCALES_REG, replaceReference)
   __updater(realReference, enLocalesPath, LOCALES_REG, replaceReference)
