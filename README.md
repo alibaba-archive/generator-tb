@@ -5,10 +5,18 @@ A [Yeoman](http://yeoman.io) generator for [Teambition](https://teambition.com)'
 
 ## Getting Started
 
-### Install Yeoman and Teambition Generator
+### Install Yeoman
 
 ```
-$ npm install -g yo generator-tb
+$ npm install -g yo
+```
+
+### Link Teambition Generator
+
+```
+$ git clone https://github.com/teambition/generator-tb.git
+$ cd generator-tb
+$ npm link
 ```
 
 ### Using the Generator
