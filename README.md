@@ -78,8 +78,12 @@ $ yo tb:view 'board/stage menu'
 ```
 $ yo tb:model 'today event'
 
-  create src/scripts/models/today-event.coffee
-  create src/scripts/collections/today-events.coffee
+  create src/components/models/today-event/index.coffee
+  create src/components/models/today-event/locales/en.json
+  create src/components/models/today-event/locales/zh.json
+  create src/components/collections/today-events/index.coffee
+  create src/components/collections/today-events/locales/en.json
+  create src/components/collections/today-events/locales/zh.json
 ```
 
 ### How to dev
